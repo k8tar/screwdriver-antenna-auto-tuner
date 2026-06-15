@@ -13,8 +13,21 @@ a **base** tray (holds the PCB, carries the rear panel-mount connectors) and a
 ```
 openscad -D 'part="base"' -o base.stl  enclosure.scad
 openscad -D 'part="lid"'  -o lid.stl   enclosure.scad
+openscad -D 'part="both"' -o enclosure_full.stl enclosure.scad
+openscad -D 'part="base"' -o base.3mf enclosure.scad
+openscad -D 'part="lid"'  -o lid.3mf  enclosure.scad
+openscad -D 'part="both"' -o enclosure_full.3mf enclosure.scad
 # preview both side-by-side in the GUI: set part="both"
 ```
+
+Pre-generated print files for the current repo revision:
+
+- `base.stl`
+- `lid.stl`
+- `enclosure_full.stl` (base and lid exported together in one STL)
+- `base.3mf`
+- `lid.3mf`
+- `enclosure_full.3mf` (base and lid exported together in one 3MF)
 
 Additional preview modes in `enclosure.scad`:
 
