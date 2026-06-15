@@ -50,12 +50,11 @@ def footprint(name, descr, body):
 def write(name, descr, body):
     open(f"{OUT}/{name}.kicad_mod", "w").write(footprint(name, descr, body))
 
-# ── MP1584 mini buck module (~17 x 11 mm). 4 THT pads, ~13mm span ───────────
-b = [rect(-8, -5, 8, 5, "F.SilkS"), courtyard(-8.5, -5.5, 8.5, 5.5)]
-for n, x, y, lbl in [("1",-6.35,2.54,"IN+"),("2",-6.35,-2.54,"IN-"),
-                     ("3",6.35,2.54,"OUT+"),("4",6.35,-2.54,"OUT-")]:
-    b += [pad(n, x, y, first=(n=="1")), label(lbl, x+(2.4 if x<0 else -2.4), y)]
-write("BUCK_MP1584", "MP1584EN mini buck module set 3.3V (verify pad pitch)", "\n".join(b))
+# ── Murata OKI-78SR fixed 3.3V SIP buck, TO-220 compatible pinout ───────────
+b = [rect(-5.7, -1.8, 5.7, 7.2, "F.SilkS"), courtyard(-6.2, -2.3, 6.2, 7.7)]
+for n, x, lbl in [("1", -2.54, "VIN"), ("2", 0.0, "GND"), ("3", 2.54, "VOUT")]:
+    b += [pad(n, x, 0, first=(n=="1")), label(lbl, x, 3.9)]
+write("REG_OKI78SR", "Murata OKI-78SR SIP regulator, TO-220 compatible pinout", "\n".join(b))
 
 # ── Pololu DRV8871 carrier (~12.7 x 17.8 mm). 2 header rows ──────────────────
 b = [rect(-9, -7, 9, 7, "F.SilkS"), courtyard(-9.5, -7.5, 9.5, 7.5)]
@@ -87,11 +86,11 @@ for i, (num, lbl) in enumerate(RIGHT):
 write("ESP32_DevKit_30", "ESP32 30-pin DevKit; pads=WROOM pin numbers per devkit map. Verify row pitch.", "\n".join(b))
 
 # ── Hand-wound FT37-43 current transformer: 5 THT leads + toroid silk ───────
-pts = [(5.5*math.cos(math.radians(a)), 5.5*math.sin(math.radians(a))) for a in range(0, 360, 20)]
+pts = [(4.8*math.cos(math.radians(a)), 4.8*math.sin(math.radians(a))) for a in range(0, 360, 20)]
 b = [courtyard(-9, -6.5, 9, 6.5),
      "\n".join(f'  (fp_line (start {pts[i][0]:.2f} {pts[i][1]:.2f}) '
                f'(end {pts[(i+1)%len(pts)][0]:.2f} {pts[(i+1)%len(pts)][1]:.2f}) '
-               f'(stroke (width 0.12) (type solid)) (layer "F.SilkS"))' for i in range(len(pts)))]
+            f'(stroke (width 0.08) (type solid)) (layer "F.SilkS"))' for i in range(len(pts)))]
 for n, x, y, lbl in [("1",-7.62,2.54,"P1"),("2",-7.62,-2.54,"P2"),
                      ("3",7.62,3.81,"S1"),("4",7.62,0,"SCT"),("5",7.62,-3.81,"S2")]:
     b += [pad(n, x, y, first=(n=="1")), label(lbl, x+(2.4 if x<0 else -2.4), y)]

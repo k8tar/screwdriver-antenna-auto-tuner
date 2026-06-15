@@ -111,15 +111,14 @@ _register_custom(
         ("5", "S2",   7.62, -5.08, 180),
     ])
 
-# MP1584EN mini buck module (set to 3.3V). Socketed 4-pin module.
+# Murata OKI-78SR fixed 3.3V SIP regulator. TO-220 compatible 3-pin module.
 _register_custom(
-    "BUCK_MP1584",
-    body='        (rectangle (start -7.62 6.35) (end 7.62 -6.35) (stroke (width 0.254)) (fill (type background)))',
+    "REG_OKI78SR",
+    body='        (rectangle (start -5.08 6.35) (end 5.08 -2.54) (stroke (width 0.254)) (fill (type background)))',
     pins=[
-        ("1", "IN+",  -10.16,  3.81, 0),
-        ("2", "IN-",  -10.16, -3.81, 0),
-        ("3", "OUT+",  10.16,  3.81, 180),
-        ("4", "OUT-",  10.16, -3.81, 180),
+        ("1", "VIN",  -7.62,  2.54, 0),
+        ("2", "GND",   0.0,  -5.08, 90),
+        ("3", "VOUT",  7.62,  2.54, 180),
     ])
 
 # Pololu DRV8871 single-brushed-DC motor driver carrier. Socketed module.
@@ -483,9 +482,9 @@ pwr_flag("+3V3", 40, 24)
 pwr_flag("GND",  60, 24)
 
 # ─────────────────────────────────────────────────────────────────────────────
-# BLOCK 1 — POWER SUPPLY  (MP1584 module, 12 V -> 3.3 V)
+# BLOCK 1 — POWER SUPPLY  (Murata OKI-78SR, 12 V -> 3.3 V)
 # ─────────────────────────────────────────────────────────────────────────────
-sch_text("POWER SUPPLY  -  MP1584 module  12V -> 3.3V", 20, 40, 1.5)
+sch_text("POWER SUPPLY  -  Murata OKI-78SR  12V -> 3.3V", 20, 40, 1.5)
 
 # 12 V input connector
 J1 = Comp("Connector_Generic.kicad_sym", "Conn_01x02", "J1", "12V_IN", 28, 56,
@@ -502,14 +501,14 @@ passive("Device.kicad_sym", "D_TVS", "D1", "SMBJ13A", 68, 60, "+12V", "GND",
 passive("Device.kicad_sym", "C", "C1", "100uF_25V", 86, 60, "+12V", "GND",
         props={"Footprint": "Capacitor_SMD:CP_Elec_6.3x5.4"})
 
-# Buck: MP1584EN mini module (preset to 3.3V). 12V -> 3.3V, ~0.5A rail.
-BUCK = Comp("custom", "BUCK_MP1584", "U1", "MP1584_3V3", 130, 60,
-            props={"Footprint": "Tuner:BUCK_MP1584",
-                   "Description": "MP1584EN mini buck module, set to 3.3V output"})
-BUCK.connect("IN+",  "+12V")
-BUCK.connect("IN-",  "GND")
-BUCK.connect("OUT+", "+3V3")
-BUCK.connect("OUT-", "GND")
+# Fixed-output SIP regulator: 7-36V in, 3.3V out, 1.5A max.
+BUCK = Comp("custom", "REG_OKI78SR", "U1", "OKI78SR_3V3", 130, 60,
+         props={"Footprint": "Tuner:REG_OKI78SR",
+             "MPN": "OKI-78SR-3.3/1.5-W36-C",
+             "Description": "Murata fixed 3.3V SIP buck regulator, 7-36V input, 1.5A max"})
+BUCK.connect("VIN",  "+12V")
+BUCK.connect("GND",  "GND")
+BUCK.connect("VOUT", "+3V3")
 # 3V3 output bypass
 passive("Device.kicad_sym", "C", "C3", "100nF", 160, 60, "+3V3", "GND",
         props={"Footprint": "Capacitor_SMD:C_0805_2012Metric"})
@@ -705,11 +704,6 @@ det_farm.passive("Device.kicad_sym", "C", "C10", "1nF",  "SWR_REV", "GND",
                  {"Footprint": "Capacitor_SMD:C_0805_2012Metric"})
 det_farm.passive("Device.kicad_sym", "R", "R6",  "4.7k", "SWR_REV", "GND",
                  {"Footprint": "Resistor_SMD:R_0805_2012Metric"})
-# External SWR 3.5 mm jack (Tip=FWD, Ring=REV, Sleeve=GND)
-J5 = Comp("Connector_Audio.kicad_sym", "AudioJack3", "J5", "EXT_SWR", 130, 310,
-          props={"Footprint": "Connector_Audio:Jack_3.5mm_CUI_SJ1-3533NG_Horizontal",
-                 "Description": "External SWR: Tip=FWD Ring=REV Sleeve=GND"})
-J5.connect("T", "SWR_FWD"); J5.connect("R", "SWR_REV"); J5.connect("S", "GND")
 
 # ─────────────────────────────────────────────────────────────────────────────
 # BLOCK 5 — RADIO INTERFACE  (MAX3232  CI-V / Yaesu / Kenwood)
@@ -836,11 +830,10 @@ NEEDED = [
     ("Connector_Generic.kicad_sym",    "Conn_01x03"),
     ("Connector_Generic.kicad_sym",    "Conn_01x04"),
     ("Connector_Generic.kicad_sym",    "Conn_01x06"),
-    ("Connector_Audio.kicad_sym",      "AudioJack3"),
     ("Amplifier_Current.kicad_sym",    "INA180A1"),
     ("custom",                         "MMBT3904"),
     ("custom",                         "CT_FT37_43"),
-    ("custom",                         "BUCK_MP1584"),
+    ("custom",                         "REG_OKI78SR"),
     ("custom",                         "DRV8871_CARRIER"),
     ("power.kicad_sym",                "+3V3"),
     ("power.kicad_sym",                "+12V"),

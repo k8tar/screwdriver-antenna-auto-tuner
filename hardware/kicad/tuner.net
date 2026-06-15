@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/rmarrs/code/k8tar/screwdriver-antenna-auto-tuner/hardware/kicad/tuner.kicad_sch")
-		(date "2026-06-14T20:14:08")
+		(date "2026-06-14T20:34:32")
 		(tool "Eeschema 10.0.3")
 		(sheet
 			(number "1")
@@ -147,7 +147,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-00000000002f")
+			(tstamps "00000000-0000-0000-0000-00000000002d")
 			(units
 				(unit
 					(name "A")
@@ -201,7 +201,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-00000000002a")
+			(tstamps "00000000-0000-0000-0000-000000000028")
 			(units
 				(unit
 					(name "A")
@@ -255,7 +255,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-00000000007b")
+			(tstamps "00000000-0000-0000-0000-000000000079")
 			(units
 				(unit
 					(name "A")
@@ -309,7 +309,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000080")
+			(tstamps "00000000-0000-0000-0000-00000000007e")
 			(units
 				(unit
 					(name "A")
@@ -363,7 +363,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000000b6")
+			(tstamps "00000000-0000-0000-0000-0000000000b4")
 			(units
 				(unit
 					(name "A")
@@ -417,7 +417,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000000f4")
+			(tstamps "00000000-0000-0000-0000-0000000000f2")
 			(units
 				(unit
 					(name "A")
@@ -471,7 +471,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000000f9")
+			(tstamps "00000000-0000-0000-0000-0000000000f7")
 			(units
 				(unit
 					(name "A")
@@ -525,7 +525,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-00000000010e")
+			(tstamps "00000000-0000-0000-0000-00000000010c")
 			(units
 				(unit
 					(name "A")
@@ -579,7 +579,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000118")
+			(tstamps "00000000-0000-0000-0000-000000000116")
 			(units
 				(unit
 					(name "A")
@@ -633,7 +633,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000148")
+			(tstamps "00000000-0000-0000-0000-00000000013f")
 			(units
 				(unit
 					(name "A")
@@ -687,7 +687,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-00000000014d")
+			(tstamps "00000000-0000-0000-0000-000000000144")
 			(units
 				(unit
 					(name "A")
@@ -741,7 +741,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000152")
+			(tstamps "00000000-0000-0000-0000-000000000149")
 			(units
 				(unit
 					(name "A")
@@ -795,7 +795,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000157")
+			(tstamps "00000000-0000-0000-0000-00000000014e")
 			(units
 				(unit
 					(name "A")
@@ -849,7 +849,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-00000000015c")
+			(tstamps "00000000-0000-0000-0000-000000000153")
 			(units
 				(unit
 					(name "A")
@@ -903,7 +903,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000076")
+			(tstamps "00000000-0000-0000-0000-000000000074")
 			(units
 				(unit
 					(name "A")
@@ -957,7 +957,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000000ac")
+			(tstamps "00000000-0000-0000-0000-0000000000aa")
 			(units
 				(unit
 					(name "A")
@@ -1011,7 +1011,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000000b1")
+			(tstamps "00000000-0000-0000-0000-0000000000af")
 			(units
 				(unit
 					(name "A")
@@ -1131,7 +1131,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000103")
+			(tstamps "00000000-0000-0000-0000-000000000101")
 			(units
 				(unit
 					(name "A")
@@ -1191,7 +1191,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000108")
+			(tstamps "00000000-0000-0000-0000-000000000106")
 			(units
 				(unit
 					(name "A")
@@ -1359,7 +1359,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000161")
+			(tstamps "00000000-0000-0000-0000-000000000158")
 			(units
 				(unit
 					(name "A")
@@ -1425,7 +1425,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000000da")
+			(tstamps "00000000-0000-0000-0000-0000000000d8")
 			(units
 				(unit
 					(name "A")
@@ -1479,7 +1479,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000000df")
+			(tstamps "00000000-0000-0000-0000-0000000000dd")
 			(units
 				(unit
 					(name "A")
@@ -1489,63 +1489,6 @@
 						)
 						(pin
 							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "J5")
-			(value "EXT_SWR")
-			(footprint "Connector_Audio:Jack_3.5mm_CUI_SJ1-3533NG_Horizontal")
-			(description "External SWR: Tip=FWD Ring=REV Sleeve=GND")
-			(fields
-				(field
-					(name "Footprint") "Connector_Audio:Jack_3.5mm_CUI_SJ1-3533NG_Horizontal")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "External SWR: Tip=FWD Ring=REV Sleeve=GND")
-			)
-			(libsource
-				(lib "Connector_Audio")
-				(part "AudioJack3")
-				(description "Audio Jack, 3 Poles (Stereo / TRS)")
-			)
-			(property
-				(name "Sheetname")
-				(value "")
-			)
-			(property
-				(name "Sheetfile")
-				(value "tuner.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "audio jack receptacle stereo headphones phones TRS connector")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "Jack*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "00000000-0000-0000-0000-000000000122")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "S")
-						)
-						(pin
-							(num "R")
-						)
-						(pin
-							(num "T")
 						)
 					)
 				)
@@ -1590,7 +1533,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000000bb")
+			(tstamps "00000000-0000-0000-0000-0000000000b9")
 			(units
 				(unit
 					(name "A")
@@ -1650,7 +1593,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000001c7")
+			(tstamps "00000000-0000-0000-0000-0000000001be")
 			(units
 				(unit
 					(name "A")
@@ -1710,7 +1653,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-00000000018e")
+			(tstamps "00000000-0000-0000-0000-000000000185")
 			(units
 				(unit
 					(name "A")
@@ -1770,7 +1713,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000001a1")
+			(tstamps "00000000-0000-0000-0000-000000000198")
 			(units
 				(unit
 					(name "A")
@@ -1827,7 +1770,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-00000000016f")
+			(tstamps "00000000-0000-0000-0000-000000000166")
 			(units
 				(unit
 					(name "A")
@@ -1884,7 +1827,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000176")
+			(tstamps "00000000-0000-0000-0000-00000000016d")
 			(units
 				(unit
 					(name "A")
@@ -1941,7 +1884,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000000ef")
+			(tstamps "00000000-0000-0000-0000-0000000000ed")
 			(units
 				(unit
 					(name "A")
@@ -1995,7 +1938,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000000fe")
+			(tstamps "00000000-0000-0000-0000-0000000000fc")
 			(units
 				(unit
 					(name "A")
@@ -2049,7 +1992,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000113")
+			(tstamps "00000000-0000-0000-0000-000000000111")
 			(units
 				(unit
 					(name "A")
@@ -2103,7 +2046,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-00000000011d")
+			(tstamps "00000000-0000-0000-0000-00000000011b")
 			(units
 				(unit
 					(name "A")
@@ -2157,7 +2100,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000001b3")
+			(tstamps "00000000-0000-0000-0000-0000000001aa")
 			(units
 				(unit
 					(name "A")
@@ -2211,7 +2154,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000001b8")
+			(tstamps "00000000-0000-0000-0000-0000000001af")
 			(units
 				(unit
 					(name "A")
@@ -2265,7 +2208,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000001a9")
+			(tstamps "00000000-0000-0000-0000-0000000001a0")
 			(units
 				(unit
 					(name "A")
@@ -2319,7 +2262,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000001ae")
+			(tstamps "00000000-0000-0000-0000-0000000001a5")
 			(units
 				(unit
 					(name "A")
@@ -2373,7 +2316,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-00000000017e")
+			(tstamps "00000000-0000-0000-0000-000000000175")
 			(units
 				(unit
 					(name "A")
@@ -2427,7 +2370,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000183")
+			(tstamps "00000000-0000-0000-0000-00000000017a")
 			(units
 				(unit
 					(name "A")
@@ -2481,7 +2424,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000188")
+			(tstamps "00000000-0000-0000-0000-00000000017f")
 			(units
 				(unit
 					(name "A")
@@ -2535,7 +2478,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000071")
+			(tstamps "00000000-0000-0000-0000-00000000006f")
 			(units
 				(unit
 					(name "A")
@@ -2589,7 +2532,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000085")
+			(tstamps "00000000-0000-0000-0000-000000000083")
 			(units
 				(unit
 					(name "A")
@@ -2643,7 +2586,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000000c5")
+			(tstamps "00000000-0000-0000-0000-0000000000c3")
 			(units
 				(unit
 					(name "A")
@@ -2697,7 +2640,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000000cf")
+			(tstamps "00000000-0000-0000-0000-0000000000cd")
 			(units
 				(unit
 					(name "A")
@@ -2751,7 +2694,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000000ca")
+			(tstamps "00000000-0000-0000-0000-0000000000c8")
 			(units
 				(unit
 					(name "A")
@@ -2805,7 +2748,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000000d4")
+			(tstamps "00000000-0000-0000-0000-0000000000d2")
 			(units
 				(unit
 					(name "A")
@@ -2859,7 +2802,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000099")
+			(tstamps "00000000-0000-0000-0000-000000000097")
 			(units
 				(unit
 					(name "A")
@@ -2913,7 +2856,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000001c2")
+			(tstamps "00000000-0000-0000-0000-0000000001b9")
 			(units
 				(unit
 					(name "A")
@@ -2967,7 +2910,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000001bd")
+			(tstamps "00000000-0000-0000-0000-0000000001b4")
 			(units
 				(unit
 					(name "A")
@@ -3021,7 +2964,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000197")
+			(tstamps "00000000-0000-0000-0000-00000000018e")
 			(units
 				(unit
 					(name "A")
@@ -3075,7 +3018,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-00000000019c")
+			(tstamps "00000000-0000-0000-0000-000000000193")
 			(units
 				(unit
 					(name "A")
@@ -3121,7 +3064,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000000e4")
+			(tstamps "00000000-0000-0000-0000-0000000000e2")
 			(units
 				(unit
 					(name "A")
@@ -3147,22 +3090,28 @@
 		)
 		(comp
 			(ref "U1")
-			(value "MP1584_3V3")
-			(footprint "Tuner:BUCK_MP1584")
-			(description "MP1584EN mini buck module, set to 3.3V output")
+			(value "OKI78SR_3V3")
+			(footprint "Tuner:REG_OKI78SR")
+			(description "Murata fixed 3.3V SIP buck regulator, 7-36V input, 1.5A max")
 			(fields
 				(field
-					(name "Footprint") "Tuner:BUCK_MP1584")
+					(name "MPN") "OKI-78SR-3.3/1.5-W36-C")
+				(field
+					(name "Footprint") "Tuner:REG_OKI78SR")
 				(field
 					(name "Datasheet")
 				)
 				(field
-					(name "Description") "MP1584EN mini buck module, set to 3.3V output")
+					(name "Description") "Murata fixed 3.3V SIP buck regulator, 7-36V input, 1.5A max")
 			)
 			(libsource
 				(lib "Tuner")
-				(part "BUCK_MP1584")
+				(part "REG_OKI78SR")
 				(description "")
+			)
+			(property
+				(name "MPN")
+				(value "OKI-78SR-3.3/1.5-W36-C")
 			)
 			(property
 				(name "Sheetname")
@@ -3189,9 +3138,6 @@
 						)
 						(pin
 							(num "3")
-						)
-						(pin
-							(num "4")
 						)
 					)
 				)
@@ -3242,7 +3188,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-000000000035")
+			(tstamps "00000000-0000-0000-0000-000000000033")
 			(units
 				(unit
 					(name "A")
@@ -3413,7 +3359,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-00000000012a")
+			(tstamps "00000000-0000-0000-0000-000000000121")
 			(units
 				(unit
 					(name "A")
@@ -3501,7 +3447,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-00000000008b")
+			(tstamps "00000000-0000-0000-0000-000000000089")
 			(units
 				(unit
 					(name "A")
@@ -3573,7 +3519,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "00000000-0000-0000-0000-0000000000a1")
+			(tstamps "00000000-0000-0000-0000-00000000009f")
 			(units
 				(unit
 					(name "A")
@@ -3646,45 +3592,6 @@
 					(num "5")
 					(name "V+")
 					(type "power_in")
-				)
-			)
-		)
-		(libpart
-			(lib "Connector_Audio")
-			(part "AudioJack3")
-			(description "Audio Jack, 3 Poles (Stereo / TRS)")
-			(footprints
-				(fp "Jack*")
-			)
-			(fields
-				(field
-					(name "Reference") "J")
-				(field
-					(name "Value") "AudioJack3")
-				(field
-					(name "Footprint")
-				)
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Audio Jack, 3 Poles (Stereo / TRS)")
-			)
-			(pins
-				(pin
-					(num "R")
-					(name "")
-					(type "passive")
-				)
-				(pin
-					(num "S")
-					(name "")
-					(type "passive")
-				)
-				(pin
-					(num "T")
-					(name "")
-					(type "passive")
 				)
 			)
 		)
@@ -4361,47 +4268,6 @@
 		)
 		(libpart
 			(lib "Tuner")
-			(part "BUCK_MP1584")
-			(fields
-				(field
-					(name "Reference") "T")
-				(field
-					(name "Value") "BUCK_MP1584")
-				(field
-					(name "Footprint")
-				)
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description")
-				)
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "IN+")
-					(type "passive")
-				)
-				(pin
-					(num "2")
-					(name "IN-")
-					(type "passive")
-				)
-				(pin
-					(num "3")
-					(name "OUT+")
-					(type "passive")
-				)
-				(pin
-					(num "4")
-					(name "OUT-")
-					(type "passive")
-				)
-			)
-		)
-		(libpart
-			(lib "Tuner")
 			(part "CT_FT37_43")
 			(fields
 				(field
@@ -4535,15 +4401,47 @@
 				)
 			)
 		)
+		(libpart
+			(lib "Tuner")
+			(part "REG_OKI78SR")
+			(fields
+				(field
+					(name "Reference") "T")
+				(field
+					(name "Value") "REG_OKI78SR")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VIN")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "VOUT")
+					(type "passive")
+				)
+			)
+		)
 	)
 	(libraries
 		(library
 			(logical "Amplifier_Current")
 			(uri "${KICAD10_SYMBOL_DIR}/Amplifier_Current.kicad_sym")
-		)
-		(library
-			(logical "Connector_Audio")
-			(uri "${KICAD10_SYMBOL_DIR}/Connector_Audio.kicad_sym")
 		)
 		(library
 			(logical "Connector_Generic")
@@ -4672,7 +4570,7 @@
 			(node
 				(ref "U1")
 				(pin "3")
-				(pinfunction "OUT+_3")
+				(pinfunction "VOUT_3")
 				(pintype "passive")
 			)
 			(node
@@ -4727,7 +4625,7 @@
 			(node
 				(ref "U1")
 				(pin "1")
-				(pinfunction "IN+_1")
+				(pinfunction "VIN_1")
 				(pintype "passive")
 			)
 			(node
@@ -5447,11 +5345,6 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "J5")
-				(pin "T")
-				(pintype "passive")
-			)
-			(node
 				(ref "R5")
 				(pin "1")
 				(pintype "passive")
@@ -5476,11 +5369,6 @@
 				(ref "D3")
 				(pin "1")
 				(pinfunction "K_1")
-				(pintype "passive")
-			)
-			(node
-				(ref "J5")
-				(pin "R")
 				(pintype "passive")
 			)
 			(node
@@ -5676,11 +5564,6 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "J5")
-				(pin "S")
-				(pintype "passive")
-			)
-			(node
 				(ref "J8")
 				(pin "1")
 				(pinfunction "Pin_1_1")
@@ -5755,13 +5638,7 @@
 			(node
 				(ref "U1")
 				(pin "2")
-				(pinfunction "IN-_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "4")
-				(pinfunction "OUT-_4")
+				(pinfunction "GND_2")
 				(pintype "passive")
 			)
 			(node

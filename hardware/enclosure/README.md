@@ -48,8 +48,7 @@ threaded bulkhead style.
 | RADIO | 16 mm | **GX16 bulkhead** → board J2 (universal radio, see `../RADIO_CONNECTOR.md`) |
 | POWER | 12 mm | 12 V panel jack → board J1 |
 
-**Base — right side wall:** ext-SWR 3.5 mm jack (Ø6.5, → J5) and an antenna
-connector cutout (GX16-4 style, → J6). Vent slots on the
+**Base — right side wall:** an antenna connector cutout (GX16-4 style, → J6). Vent slots on the
 left side wall (buck/motor heat).
 
 **Lid — control panel (panel-mounted UI, wired to the board headers):**

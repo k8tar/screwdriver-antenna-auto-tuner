@@ -60,7 +60,6 @@ rear_round = [
 ];
 rear_z    = floor_t + 11;   // connector centre height above floor
 // ---- right side wall (X-max) extras ----------------------------------------
-side_round = [ [30, 6.5] ];     // ext-SWR 3.5mm jack (J5), [y_center, dia]
 motor_bulkhead_y = 55;
 motor_bulkhead_d = 16.0;        // detachable antenna connector (GX16-4 style)
 
@@ -120,9 +119,6 @@ module base() {
             rotate([-90,0,0]) cylinder(d=rf_mount_hole_d, h=wall+2);
       }
     }
-    // right side wall (X-max): ext-SWR jack + cable slot, bored along +X
-    for (c = side_round)
-      translate([outer_l-wall-1, c[0], rear_z]) rotate([0,90,0]) cylinder(d=c[1], h=wall+2);
     // detachable antenna connector hole on side wall (J6 harness)
     translate([outer_l-wall-1, motor_bulkhead_y, rear_z]) rotate([0,90,0]) cylinder(d=motor_bulkhead_d, h=wall+2);
     // vent slots on the left (X-min) side wall
@@ -163,8 +159,7 @@ module panel_connectors_preview() {
   color([0.75, 0.75, 0.78]) translate([rear_round[2][0], -9, rear_z]) rotate([-90,0,0]) cylinder(d=16, h=8); // radio GX16
   color([0.62, 0.62, 0.66]) translate([rear_round[3][0], -8, rear_z]) rotate([-90,0,0]) cylinder(d=12, h=7); // power jack
 
-  // Side connectors (outside right wall).
-  color([0.75, 0.75, 0.78]) translate([outer_l+7, side_round[0][0], rear_z]) rotate([0,90,0]) cylinder(d=6.5, h=7); // ext SWR
+  // Side connector (outside right wall).
   color([0.75, 0.75, 0.78]) translate([outer_l+8, motor_bulkhead_y, rear_z]) rotate([0,90,0]) cylinder(d=16, h=8);   // antenna bulkhead
 }
 
@@ -232,7 +227,7 @@ module board_preview() {
 
       // Rough module envelopes for visual fit checks (populated board view).
       color([0.08, 0.08, 0.08]) translate([6, 8, board_t]) cube([26, 52, 16]);      // ESP32 devkit
-      color([0.15, 0.15, 0.15]) translate([35, 8, board_t]) cube([20, 30, 14]);     // buck module
+      color([0.16, 0.16, 0.16]) translate([53, 13, board_t]) cube([11, 10, 15]);     // Murata SIP regulator
       color([0.15, 0.15, 0.15]) translate([58, 8, board_t]) cube([20, 30, 14]);     // motor driver
       color([0.65, 0.45, 0.1])  translate([74, 41, board_t]) cylinder(d=16, h=8);    // T1 toroid area
 

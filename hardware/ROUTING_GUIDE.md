@@ -76,7 +76,7 @@ The Bruene bridge measures forward/reflected power, so its layout affects accura
 ## 5. Placement notes (already done, refine as you route)
 
 - ESP32 DevKit stands **upright (tall) on the left edge** (socketed on female headers).
-- Rear edge = connectors (power, antenna motor/sensor, ext-SWR, debug, and the
+- Rear edge = connectors (power, antenna motor/sensor, debug, and the
   **universal radio header J2** → panel bulkhead, see `RADIO_CONNECTOR.md`).
 - Front edge = UI (OLED, encoder, TUNE/MEM buttons, MODE, jog rocker).
 - Buck (U1), motor carrier (U4), MAX3232 (U3) are **socketed modules** — leave

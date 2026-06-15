@@ -33,7 +33,7 @@ is easy to localize.
 ## Orientation
 
 Hold the board with the silkscreen readable. Landmarks (top copper render):
-**U2 (ESP32) down the left edge · connectors (J3 J4 J1 J6 J5 J8) along the top ·
+**U2 (ESP32) down the left edge · connectors (J3 J4 J1 J6 J8) along the top ·
 U1 buck top-center · U4 motor carrier center · T1 toroid + detectors center-right ·
 U3 (MAX3232) right · the UI header row (J_OLED SW1 SW2 J_TUNE) along
 the bottom · 4× M3 mounting holes at the corners.**
@@ -117,10 +117,10 @@ clean off flux with IPA and inspect the whole board before going through-hole.
 
 ---
 
-## Stage 4 — Through-hole: headers, jack, module sockets
+## Stage 4 — Through-hole: headers and module sockets
 
 The UI controls and most connectors are **2.54 mm headers** (the actual switches,
-OLED, jacks and Mini-UHF bulkheads are panel-mounted and wired to these — Stage 7).
+OLED and Mini-UHF bulkheads are panel-mounted and wired to these — Stage 7).
 
 **4a. Board headers** — solder vertical 2.54 mm headers at every position below.
 Use **female** sockets if you want the panel controls to plug in, or male pins to
@@ -138,10 +138,32 @@ solder flying leads to:
 > *board* side of those positions — grab a 40-pin strip.
 > *(Pure auto-tuner: the rotary encoder, MODE switch and hall connector are gone.)*
 
-**4b. THT jack:** J5 (SJ1-3533NG, 3.5 mm ext-SWR). Solder flush; it's polarized by
-shape only.
+### Vehicle-grade note for this revision
 
-**4c. Module sockets:** solder **female header strip** into the U1, U2, U4 module
+For a mobile installation, do **not** rely on loose Dupont-style jumper leads as
+the final internal wiring method. Vehicle vibration can work friction-only jumper
+connections loose over time.
+
+Recommended approach for this PCB revision:
+
+- For **J1, J2, J3, J4, and J6**, solder the internal harness wires directly into
+   the board holes instead of using loose plug-on jumpers.
+- Put the **detachable interface at the panel connector** (GX16, Mini-UHF, power
+   jack), not at the board header.
+- Add **strain relief** close to the PCB using a tie-down, adhesive mount, lacing,
+   silicone, or similar support so the solder joints do not carry cable flex.
+- Twist the appropriate signal/return pairs and keep them anchored so they cannot
+   vibrate against the board or enclosure.
+
+For this revision, the only places where removable board-side connections still
+make sense are the socketed modules **U1**, **U2**, and **U4**, plus any lid-side
+controls if you specifically want service-open access.
+
+If you plan a future board respin for harsher mobile service, replace the plain
+2.54 mm board headers with **locking wire-to-board connectors** rather than loose
+friction headers.
+
+**4b. Module sockets:** solder **female header strip** into the U1, U2, U4 module
 footprints so the modules are removable (recommended over soldering modules
 directly). Match the socket rows to the module footprints exactly.
 
@@ -173,12 +195,12 @@ no enamel left on tinned ends.
 
 ## Stage 6 — Configure & fit the modules (no heat — plug-in)
 
-**Do U1 first and set its voltage BEFORE it powers the logic.**
+**Do U1 first and confirm its orientation BEFORE it powers the logic.**
 
-1. **U1 (MP1584 buck):** power the module alone from 12 V on its IN pins and turn the
-   trimpot until **OUT = 3.30 V** on a meter. **Critical** — modules often ship set
-   higher; an over-volt 3.3 V rail can kill the ESP32. Only then fit it (IN+/IN-,
-   OUT+/OUT- to the silk).
+1. **U1 (Murata OKI-78SR-3.3/1.5-W36-C):** this is a **fixed-output 3.3 V SIP
+   regulator**, so there is no trimpot to adjust. Verify the pin orientation before
+   fitting: **pin 1 = VIN**, **pin 2 = GND**, **pin 3 = VOUT**. Fit it to the U1
+   footprint so 12 V enters VIN and 3.3 V leaves VOUT.
 2. **U4 (Pololu DRV8871 #2990):** orient VIN/GND/IN1/IN2/OUT1/OUT2 to the silk and
    seat it.
 3. **U2 (ESP32 DevKit):** orient so the silk pin names (3V3, GND, D15 …) line up
@@ -201,10 +223,12 @@ with short flying leads (see `enclosure/README.md` for the cutout layout and
   primary→J4 path carries TX power.
 - **Power:** 12 V panel jack → J1.
 - **Antenna:** J6 → **GX16-4 panel bulkhead** (motor + optional sensor pair).
-- **Ext-SWR:** panel 3.5 mm jack (or use board J5 directly).
 
 > Twist signal/return pairs; keep the RF and motor leads away from the SWR detector
 > and ADC wiring.
+
+> For in-vehicle use, treat those board connections as **direct-solder harness
+> terminations with strain relief**, not as loose internal jumper leads.
 
 > Board-side RF connection is via the 2-pin headers/pads at J3 and J4 (signal +
 > ground), not a dedicated coax board jack. Use short RG-316 pigtails from each

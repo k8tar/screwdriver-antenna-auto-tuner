@@ -32,11 +32,10 @@ BYREF = {  # everything else, by reference
     "D1": "SMBJ13A-E3/52", "D2": "BAT46WS", "D3": "BAT46WS",   # Diotec BAT46WS SOD-323
     "Q1": "MMBT3904LT1G", "Q2": "MMBT3904LT1G",
     "U3": "MAX3232ESE+", "U6": "INA180A1IDBVR",
-    "U1": "MP1584EN-module", "U2": "ESP32-DevKitV1-30pin", "U4": "POLOLU-2990",
+    "U1": "OKI-78SR-3.3/1.5-W36-C", "U2": "ESP32-DevKitV1-30pin", "U4": "POLOLU-2990",
     "T1": "5943000201",            # Fair-Rite FT37-43 core (Mouser); hand-wind 30T 0.3mm
     "ENC1": "PEC11R-4220F-S0024",
     "SW1": "PTS645VL58-2LFS", "SW2": "PTS645VL58-2LFS", "SW_ENC": "PTS645VL58-2LFS",
-    "J5": "SJ1-3533NG",            # CUI/Same Sky 3.5mm switched jack (Mouser)
     "J1": "61300211121", "J3": "61300211121", "J4": "61300211121",
     "J7": "61300311121", "SW3": "61300311121", "J_TUNE": "61300311121",
     "J6": "61300411121", "J8": "61300411121", "J_OLED": "61300411121", "J2": "61300611121",

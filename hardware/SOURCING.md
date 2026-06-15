@@ -63,6 +63,30 @@ Use a short internal lead from J6 to the panel bulkhead, then build external
 adapter leads from GX16-4 to whatever your antenna expects (Tarheel and other
 screwdriver antennas vary by harness/end termination).
 
+### Internal board wiring for this revision
+
+For the current PCB revision, the best mobile-installation practice is:
+
+- use the board holes/headers as **solder points for short internal harnesses**
+- anchor those harnesses with **strain relief** inside the enclosure
+- avoid loose Dupont-style jumper wires for permanent in-vehicle service
+
+Why: the present board uses generic 2.54 mm header footprints for flexibility,
+but friction-only jumper leads are not the best long-term choice in a vibrating
+vehicle environment.
+
+### Preferred connector family for a future board revision
+
+If the board is revised specifically for vehicle service, consider replacing the
+plain 2.54 mm headers with locking wire-to-board connectors such as:
+
+- **Molex KK 254 with friction lock** for light signal wiring
+- **JST-VH** for higher-current power wiring
+- **Molex Micro-Fit 3.0** for a more robust locking harness system
+
+Those are recommendations for a future board revision only; the current build is
+best handled with direct-soldered internal harnesses.
+
 Why we are **not** standardizing the enclosure-side connector to Tarheel's Molex:
 
 - The Tarheel Molex is an inline cable connector, not a panel bulkhead.
@@ -124,7 +148,6 @@ the cart to confirm nothing's missing:
 | 1 | SMBJ13A-E3/52 | TVS | D1 |
 | 1 | 1812L300/24SLER | 3A PTC fuse 1812 | F1 |
 | 1 | 61300611121 | 1×06 header | J2 |
-| 1 | SJ1-3533NG | 3.5mm jack | J5 |
 | 1 | WSL2512R0500FEA | 0.05Ω 1W shunt | R_SH |
 | 1 | RC0805FR-07150RL | 150Ω 0805 | R3 |
 | 1 | RC0805FR-071KL | 1k 0805 | R4 |
@@ -144,29 +167,22 @@ the cart to confirm nothing's missing:
 | Ref | Part | Price | Pack | Per unit | Source |
 |-----|------|-------|------|----------|--------|
 | **U2** | ESP32 DevKit V1 (30-pin) | $19.07 shipped | 1 | **$19.07** | [Amazon B0CNYK7WT2](https://www.amazon.com/dp/B0CNYK7WT2) |
-| **U1** | MP1584EN buck module | $20.13 shipped | 12 | **$1.68** | [Amazon B07RVG34WR](https://www.amazon.com/dp/B07RVG34WR) |
 | **U4** | Pololu DRV8871 carrier #2990 | $60.90 (FedEx 2-day) | 10 | **$6.09** | [Pololu #2990](https://www.pololu.com/product/2990) |
 
-**Per-board module cost ≈ $26.84** (1× each).
+**Per-board module cost ≈ $25.16** (1× each, excluding U1 which is now on-Mouser).
 
 Notes:
-- U1 and U4 come in multi-packs — the per-unit cost above assumes you use the
-  whole pack across multiple builds. One board needs 1 of each.
-- Set the MP1584 module's output to **3.3 V** with its trimpot before fitting.
-- The MP1584 module is acceptable for prototype builds, but for a more robust
-  production version prefer a **fixed-output 3.3 V switching regulator** so the
-  rail does not depend on a trim pot. A solid Mouser-friendly target for the next
-  board spin is **Murata OKI-78SR-3.3/1.5-W36-C**: 7-36 V input, fixed 3.3 V
-  output, 1.5 A max, about 4.95 W output power.
-- The suggested fixed-output alternatives are **not drop-in compatible** with the
-  current U1 footprint; they are recommendations for a future hardware revision,
-  not this PCB as-shipped.
+- U4 comes in a multi-pack — the per-unit cost above assumes you use the whole
+  pack across multiple builds. One board needs 1.
+- U1 is now the actual board-side regulator: **Murata OKI-78SR-3.3/1.5-W36-C**,
+  a fixed-output 3.3 V switching regulator available from Mouser.
+- U1 specs used for this revision: **7-36 V input**, **1.5 A max output**, about
+  **4.95 W output power**, fixed **3.3 V** output.
 - A plain linear regulator is **not recommended** for the full board supply from
   12 V. At only 250 mA load it would burn about `(12 - 3.3) * 0.25 = 2.18 W` as
   heat; at 500 mA it would burn about `4.35 W`, which is not practical in this
   enclosure without serious heatsinking.
-- Verify each module's pin pitch against the custom footprints
-  (`Tuner.pretty/`) before ordering boards — they're documented-but-approximate.
+- Verify the SIP pin orientation against the silkscreen before soldering U1.
 
 ## 3.3 V rail and input power budget
 
@@ -187,13 +203,12 @@ primary is just the through-line wire passing through the core.
 
 | Source | Cost |
 |--------|------|
-| Mouser cart (25 parts) | **≈ $15** _(est.; confirm in corrected cart)_ |
+| Mouser cart (board parts incl. U1) | **re-import `BOM.csv` to refresh** |
 | ESP32 DevKit V1 (U2) | $19.07 |
-| MP1584 module (U1) | $1.68 |
 | Pololu DRV8871 #2990 (U4) | $6.09 |
 | Magnet wire (T1 secondary) | ~$1 (spool covers many) |
-| **Modules + wire subtotal** | **≈ $26.84** |
-| **Grand total per board** | **≈ $45** (+ bare PCB ~$2–10) |
+| **Modules + wire subtotal** | **≈ $26.16** plus the Mouser cart |
+| **Grand total per board** | **depends on refreshed Mouser cart** (+ bare PCB ~$2–10) |
 
 _Not included:_ the bare 4-layer PCB (≈$2–10/board from JLCPCB, qty-dependent — see
 `fab/tuner_gerbers.zip`), and the panel-mount hardware wired by flying lead (2×
