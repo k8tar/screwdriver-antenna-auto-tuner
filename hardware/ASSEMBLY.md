@@ -308,7 +308,7 @@ then later tune sweeps can use the pulse feedback for more repeatable returns.
 2. **Continuity (power off):** `+12V`↔`GND` **not** shorted; `+3V3`↔`GND` **not**
    shorted.
 3. **First power:** bench PSU at **12 V, current limit ~0.3–0.5 A**. It should draw
-   little and **not get hot**. Measure **`+3V3` = 3.3 V** (U1 was preset). If current
+   little and **not get hot**. Measure **`+3V3` = 3.3 V** at U1 output. If current
    slams to the limit or anything heats — power off, find the short.
 4. **Logic alive:** the ESP32 should boot (onboard LED / USB-serial console on the
    debug UART, J8 / GPIO1-3).
