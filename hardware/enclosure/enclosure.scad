@@ -70,6 +70,11 @@ oled_c    = [45, 26];  oled_win  = [30, 17];   // SSD1306 active-area window
 btn_xy    = [[30,66], [50,66]];  btn_d = 6;    // TUNE / PARK buttons
 jog_c     = [88, 66];  jog_slot  = [13, 9];    // jog rocker
 
+// Additional pass-throughs for panel wiring on the lid underside.
+oled_wire_slot = [8, 4];
+btn_wire_d = 2.6;
+jog_wire_slot = [6, 4];
+
 // =============================================================================
 
 module screw_pilot(d=2.6, h=12) cylinder(d=d, h=h);   // M3 self-tap pilot
@@ -137,15 +142,27 @@ module lid() {
     }
     // lid screw clearance holes + counterbores
     for (b = lid_boss) translate([b[0], b[1], -0.1]) {
-      cylinder(d=3.4, h=lid_t+0.2);
+      cylinder(d=3.4, h=lid_t+4.2);
       translate([0,0,lid_t-1.6]) cylinder(d=6.2, h=2);
     }
     // ---- control-panel cutouts ----
     translate([oled_c[0]-oled_win[0]/2, oled_c[1]-oled_win[1]/2, -1])
       cube([oled_win[0], oled_win[1], lid_t+2]);
+    // OLED wiring exits through two small slots at the top of the module,
+    // positioned where the module PCB/header will hide them.
+    for (sx = [-8, 8])
+      translate([oled_c[0] + sx - oled_wire_slot[0]/2, oled_c[1] - oled_win[1]/2 - 4, -4.1])
+        cube([oled_wire_slot[0], oled_wire_slot[1], 7.3]);
     for (b = btn_xy) translate([b[0], b[1], -1]) cylinder(d=btn_d, h=lid_t+2);
+    // Small through-holes sit just behind the button bodies so they are covered
+    // once the panel switches are installed.
+    for (b = btn_xy)
+      translate([b[0], b[1]-4.6, -4.1]) cylinder(d=btn_wire_d, h=7.3);
     translate([jog_c[0]-jog_slot[0]/2, jog_c[1]-jog_slot[1]/2, -1])
       cube([jog_slot[0], jog_slot[1], lid_t+2]);
+    // Jog switch wiring slot sits above the rocker opening under the switch body.
+    translate([jog_c[0]-jog_wire_slot[0]/2, jog_c[1]-jog_slot[1]/2-5.0, -4.1])
+      cube([jog_wire_slot[0], jog_wire_slot[1], 7.3]);
   }
 }
 

@@ -68,7 +68,13 @@ left side wall (buck/motor heat).
 OLED window (30 × 17), two button holes (Ø6: TUNE / PARK), and a jog-rocker slot
 (13 × 9). These are a clean ergonomic layout — the parts mount on the lid and
 connect by flying lead to the J_OLED / SW1 / SW2 / J_TUNE headers, so the lid
-layout is independent of where those headers sit on the PCB.
+layout is independent of where those headers sit on the PCB. The current lid
+revision also includes:
+
+- wire pass-through slots for the OLED, buttons, and jog switch leads, placed
+  behind the visible openings so the mounted component bodies cover them
+- lid screw clearance bores that continue through the locating lip so the screws
+  actually pass into the base bosses
 
 ## Assembly
 1. Screw the PCB onto the 4 floor standoffs (M3 × 6, from above).
