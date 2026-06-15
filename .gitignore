@@ -1,0 +1,12 @@
+.pio/
+__pycache__/
+*.pyc
+*.pyo
+*.swp
+*.swo
+.DS_Store
+hardware/kicad/~*.lck
+hardware/kicad/*.kicad_prl
+hardware/kicad/*.kicad_pro-bak
+hardware/kicad/.history/
+.vscode/

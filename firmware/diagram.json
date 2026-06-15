@@ -1,0 +1,311 @@
+{
+  "version": 1,
+  "author": "screwdriver-antenna-auto-tuner",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -10,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled",
+      "top": -190,
+      "left": 230,
+      "attrs": {
+        "i2cAddress": "0x3c"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnTune",
+      "top": 222,
+      "left": 332,
+      "attrs": {
+        "color": "green",
+        "label": "TUNE"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnPark",
+      "top": 272,
+      "left": 332,
+      "attrs": {
+        "color": "blue",
+        "label": "PARK"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnUp",
+      "top": 222,
+      "left": 430,
+      "attrs": {
+        "color": "yellow",
+        "label": "UP"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnDown",
+      "top": 272,
+      "left": 430,
+      "attrs": {
+        "color": "orange",
+        "label": "DOWN"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "adcFwd",
+      "top": 2,
+      "left": 292,
+      "attrs": {
+        "value": "540"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "adcRev",
+      "top": 72,
+      "left": 292,
+      "attrs": {
+        "value": "90"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "adcIsense",
+      "top": 142,
+      "left": 292,
+      "attrs": {
+        "value": "25"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "motorUpLed",
+      "top": 92,
+      "left": -196,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "motorDnLed",
+      "top": 148,
+      "left": -196,
+      "attrs": {
+        "color": "red"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:3V3",
+      "oled:VCC",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:GND.1",
+      "oled:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:D4",
+      "oled:SDA",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:D5",
+      "oled:SCL",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "btnTune:1.r",
+      "esp:D32",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "btnTune:2.r",
+      "esp:GND.2",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "btnPark:1.r",
+      "esp:D33",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "btnPark:2.r",
+      "esp:GND.2",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "btnUp:1.r",
+      "esp:D22",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "btnUp:2.r",
+      "esp:GND.2",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "btnDown:1.r",
+      "esp:D23",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "btnDown:2.r",
+      "esp:GND.2",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "adcFwd:SIG",
+      "esp:D34",
+      "cyan",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "adcFwd:VCC",
+      "esp:3V3",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "adcFwd:GND",
+      "esp:GND.2",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "adcRev:SIG",
+      "esp:D35",
+      "cyan",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "adcRev:VCC",
+      "esp:3V3",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "adcRev:GND",
+      "esp:GND.2",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "adcIsense:SIG",
+      "esp:D27",
+      "cyan",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "adcIsense:VCC",
+      "esp:3V3",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "adcIsense:GND",
+      "esp:GND.2",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:D25",
+      "motorUpLed:A",
+      "orange",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "motorUpLed:C",
+      "esp:GND.1",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:D26",
+      "motorDnLed:A",
+      "orange",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "motorDnLed:C",
+      "esp:GND.1",
+      "black",
+      [
+        "h0"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Tuner")(type "KiCad")(uri "${KIPRJMOD}/Tuner.pretty")(options "")(descr "Project-specific module footprints (ESP32 DevKit, MP1584 buck, DRV8871 carrier)"))
+)

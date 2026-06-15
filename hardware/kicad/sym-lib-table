@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Tuner")(type "KiCad")(uri "${KIPRJMOD}/Tuner.kicad_sym")(options "")(descr "Project-specific custom symbols (hand-wound current transformer, etc.)"))
+)
