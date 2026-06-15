@@ -65,15 +65,54 @@ motor_bulkhead_d = 16.0;        // detachable antenna connector (GX16-4 style)
 
 // ---- lid control-panel cutouts (ergonomic layout; enclosure coords) ---------
 // PANEL-MOUNTED UI wired by flying lead to the board headers (J_OLED, SW1 TUNE,
-// SW2 PARK, J_TUNE jog). Pure auto-tuner: no encoder, no mode switch.
+// SW2 PARK, J_TUNE UP/DOWN controls. Pure auto-tuner: no encoder, no mode switch.
 oled_c    = [45, 26];  oled_win  = [30, 17];   // SSD1306 active-area window
 btn_xy    = [[30,66], [50,66]];  btn_d = 6;    // TUNE / PARK buttons
-jog_c     = [88, 66];  jog_slot  = [13, 9];    // jog rocker
+jog_c     = [88, 66];  jog_btn_d = 6;          // UP / DOWN buttons
+jog_btn_dx = 6;
 
-// Additional pass-throughs for panel wiring on the lid underside.
-oled_wire_slot = [8, 4];
-btn_wire_d = 2.6;
-jog_wire_slot = [6, 4];
+// OLED mounting recess (underside): mostly hollow with a thin front lip so the
+// module can be glued/taped in from the back.
+oled_recess = [40, 28];
+oled_front_lip_t = 1.2;
+
+label_depth = 0.6;
+
+module engrave_lid_text() {
+  // Title
+  translate([12, outer_w - 10, lid_t - label_depth])
+    linear_extrude(height=label_depth + 0.05)
+      text("K8TAR Screwdriver Controller", size=3.0, font="Liberation Sans:style=Bold", halign="left", valign="baseline");
+
+  // Front control labels
+  translate([btn_xy[0][0], btn_xy[0][1]-7.5, lid_t - label_depth])
+    linear_extrude(height=label_depth + 0.05)
+      text("TUNE", size=2.6, font="Liberation Sans:style=Bold", halign="center", valign="center");
+  translate([btn_xy[1][0], btn_xy[1][1]-7.5, lid_t - label_depth])
+    linear_extrude(height=label_depth + 0.05)
+      text("PARK", size=2.6, font="Liberation Sans:style=Bold", halign="center", valign="center");
+  translate([jog_c[0]-jog_btn_dx, jog_c[1]-7.5, lid_t - label_depth])
+    linear_extrude(height=label_depth + 0.05)
+      text("UP", size=2.6, font="Liberation Sans:style=Bold", halign="center", valign="center");
+  translate([jog_c[0]+jog_btn_dx, jog_c[1]-7.5, lid_t - label_depth])
+    linear_extrude(height=label_depth + 0.05)
+      text("DOWN", size=2.6, font="Liberation Sans:style=Bold", halign="center", valign="center");
+}
+
+module engrave_base_text() {
+  // Rear connector labels (engraved into outer rear wall).
+  for (lbl = [[rear_round[0][0], "RF IN"], [rear_round[1][0], "RF OUT"], [rear_round[2][0], "RADIO"], [rear_round[3][0], "12V"]])
+    translate([lbl[0], -0.2, rear_z + 7.2])
+      rotate([90, 0, 0])
+        linear_extrude(height=0.9)
+          text(lbl[1], size=2.2, font="Liberation Sans:style=Bold", halign="center", valign="center");
+
+  // Side connector label (engraved into outer right wall).
+  translate([outer_l + 0.2, motor_bulkhead_y, rear_z + 9.0])
+    rotate([0, 90, 90])
+      linear_extrude(height=0.9)
+        text("ANT", size=2.8, font="Liberation Sans:style=Bold", halign="center", valign="center");
+}
 
 // =============================================================================
 
@@ -129,6 +168,8 @@ module base() {
     // vent slots on the left (X-min) side wall
     for (sy = [20:12:60]) for (sz = [0,1])
       translate([-1, sy, floor_t+5+sz*8]) cube([wall+2, 8, 1.6]);
+
+    engrave_base_text();
   }
 }
 
@@ -146,23 +187,19 @@ module lid() {
       translate([0,0,lid_t-1.6]) cylinder(d=6.2, h=2);
     }
     // ---- control-panel cutouts ----
+    // OLED active-area window.
     translate([oled_c[0]-oled_win[0]/2, oled_c[1]-oled_win[1]/2, -1])
       cube([oled_win[0], oled_win[1], lid_t+2]);
-    // OLED wiring exits through two small slots at the top of the module,
-    // positioned where the module PCB/header will hide them.
-    for (sx = [-8, 8])
-      translate([oled_c[0] + sx - oled_wire_slot[0]/2, oled_c[1] - oled_win[1]/2 - 4, -4.1])
-        cube([oled_wire_slot[0], oled_wire_slot[1], 7.3]);
-    for (b = btn_xy) translate([b[0], b[1], -1]) cylinder(d=btn_d, h=lid_t+2);
-    // Small through-holes sit just behind the button bodies so they are covered
-    // once the panel switches are installed.
-    for (b = btn_xy)
-      translate([b[0], b[1]-4.6, -4.1]) cylinder(d=btn_wire_d, h=7.3);
-    translate([jog_c[0]-jog_slot[0]/2, jog_c[1]-jog_slot[1]/2, -1])
-      cube([jog_slot[0], jog_slot[1], lid_t+2]);
-    // Jog switch wiring slot sits above the rocker opening under the switch body.
-    translate([jog_c[0]-jog_wire_slot[0]/2, jog_c[1]-jog_slot[1]/2-5.0, -4.1])
-      cube([jog_wire_slot[0], jog_wire_slot[1], 7.3]);
+    // OLED module recess from the back side; leaves a thin lip at the front.
+    translate([oled_c[0]-oled_recess[0]/2, oled_c[1]-oled_recess[1]/2, -4.1])
+      cube([oled_recess[0], oled_recess[1], lid_t + 4.2 - oled_front_lip_t]);
+    // Buttons pass straight through the lid/lip for back-side glue mounting.
+    for (b = btn_xy) translate([b[0], b[1], -4.1]) cylinder(d=btn_d, h=7.3);
+    // Jog rocker opening passes fully through for back-side mounting.
+    for (sx = [-jog_btn_dx, jog_btn_dx])
+      translate([jog_c[0]+sx, jog_c[1], -4.1]) cylinder(d=jog_btn_d, h=7.3);
+
+    engrave_lid_text();
   }
 }
 
@@ -198,9 +235,9 @@ module lid_panel_parts(lid_pos=[0, 0, 0]) {
     color([0.25, 0.85, 0.25]) translate([btn_xy[0][0], btn_xy[0][1], lid_t]) cylinder(d=8, h=5); // TUNE
     color([0.22, 0.22, 0.22]) translate([btn_xy[1][0], btn_xy[1][1], lid_t]) cylinder(d=8, h=5); // PARK
 
-    // Jog rocker cap.
-    color([0.95, 0.55, 0.1])
-      translate([jog_c[0]-8, jog_c[1]-5, lid_t]) cube([16, 10, 4]);
+    // UP / DOWN button caps.
+    color([0.95, 0.55, 0.1]) translate([jog_c[0]-jog_btn_dx, jog_c[1], lid_t]) cylinder(d=8, h=5); // UP
+    color([0.95, 0.55, 0.1]) translate([jog_c[0]+jog_btn_dx, jog_c[1], lid_t]) cylinder(d=8, h=5); // DOWN
   }
 }
 

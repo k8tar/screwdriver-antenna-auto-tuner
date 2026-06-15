@@ -65,16 +65,19 @@ threaded bulkhead style.
 left side wall (buck/motor heat).
 
 **Lid — control panel (panel-mounted UI, wired to the board headers):**
-OLED window (30 × 17), two button holes (Ø6: TUNE / PARK), and a jog-rocker slot
-(13 × 9). These are a clean ergonomic layout — the parts mount on the lid and
-connect by flying lead to the J_OLED / SW1 / SW2 / J_TUNE headers, so the lid
-layout is independent of where those headers sit on the PCB. The current lid
-revision also includes:
+OLED window (30 × 17), two button holes (Ø6: TUNE / PARK), and **two momentary
+jog button holes** (Ø6: UP / DOWN). These are a clean ergonomic layout — the
+parts mount on the lid and connect by flying lead to the J_OLED / SW1 / SW2 /
+J_TUNE headers, so the lid layout is independent of where those headers sit on
+the PCB. The current lid revision also includes:
 
-- wire pass-through slots for the OLED, buttons, and jog switch leads, placed
-  behind the visible openings so the mounted component bodies cover them
+- a mostly hollow rear OLED recess with a thin front lip for glue/tape mounting
+- direct through-holes for the buttons and jog switches so switches can be
+  mounted/glued from the back with wires soldered directly on the tabs
 - lid screw clearance bores that continue through the locating lip so the screws
   actually pass into the base bosses
+- engraved text in the lid for title and control labels, plus connector labels
+  around the enclosure bulkhead cutouts
 
 ## Assembly
 1. Screw the PCB onto the 4 floor standoffs (M3 × 6, from above).
